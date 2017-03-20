@@ -424,10 +424,10 @@ def use_normalized_unicode():
 
 
 def _make_test_patterns(pattern):
-    return [PathPrefixPattern(pattern),
-            FnmatchPattern(pattern),
-            RegexPattern("^{}/foo$".format(pattern)),
-            ShellPattern(pattern),
+    return [PathPrefixPattern(pattern, recurse_dir=False),
+            FnmatchPattern(pattern, recurse_dir=False),
+            RegexPattern("^{}/foo$".format(pattern), recurse_dir=False),
+            ShellPattern(pattern, recurse_dir=False),
             ]
 
 
